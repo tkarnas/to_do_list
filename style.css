@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Marck Script", cursive;
+  font-family: cursive;
   min-height: 100vh;
   background: linear-gradient(120deg, #3a3a3a, #853a8b);
   color: white;
@@ -17,6 +17,7 @@ form,
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 header {
   font-size: 2rem;
@@ -56,7 +57,7 @@ form button {
 }
 
 .todo-lista {
-  min-width: 30%;
+  min-width: 30vw;
   list-style: none;
 }
 
@@ -67,6 +68,7 @@ form button {
   font-size: 1.5rem;
   margin: 2rem;
   transition: all 0.5s ease;
+  flex-wrap: wrap;
 }
 
 .todo-li {
@@ -75,30 +77,31 @@ form button {
   padding: 0rem 0.5rem;
   background: white;
   color: black;
+  max-width: 30vw;
 }
 
 .completed,
 .trash {
-  font-size: 2.2rem;
-  background: white;
-  color: rgb(72, 204, 32);
-  padding: 0.1rem 0.5rem;
+  font-size: 2rem;
+  background: rgb(72, 204, 32);
+  color: white;
+  padding: 0rem 0.5rem;
   border: none;
   cursor: pointer;
 }
 
 .trash {
-  color: indianred;
+  background: indianred;
 }
 
 .trash:hover {
-  background: indianred;
-  color: white;
+  background: white;
+  color: indianred;
 }
 
 .completed:hover {
-  background: rgb(72, 204, 32);
-  color: white;
+  background: white;
+  color: rgb(72, 204, 32);
 }
 
 .done {
@@ -152,4 +155,28 @@ select {
 .select:hover::after {
   background: white;
   color: #c93673;
+}
+
+@media only screen and (max-width: 480px) {
+  .todo-input {
+    width: 70%;
+  }
+  header {
+    font-size: 1.5rem;
+  }
+  .todo-lista {
+    min-width: 100vw;
+    display: flex;
+  }
+}
+  .todo-li {
+    min-width: 50vw;
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .todo-li {
+    min-width: 30vw;
+  }
 }
